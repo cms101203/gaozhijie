@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/u/website/xiangmu/myapps/app/Http/Controllers/Admin/XmController.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Http/Controllers/Admin/CompanyController.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Models/Xmdetail.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Models/AdminUser.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Models/Role.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Http/routes.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Http/Controllers/Admin/PapeController.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/layouts/base.blade.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Models/Region.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Models/Xm.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/xm/edit.blade.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/xm/_form.blade.php</file>
+        </group>
+    </open-files>
+</project-private>
