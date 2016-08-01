@@ -14,7 +14,7 @@
         <div class="form-group">
             <label for="tag" class="col-md-3 control-label">公司ID</label>
             <div class="col-md-5">
-                <input type="text" class="form-control" name="cid" id="tag" value="{{ $cid }}" autofocus><span style="color: red;">*</span>
+                <input type="text" class="form-control typeahead" name="cid" id="search_cm" value="{{ $cid }}"  data-items="8"  /><span style="color: red;">*</span>
             </div>
         </div>
         <div class="form-group">
@@ -246,37 +246,37 @@
         <div class="form-group">
             <label for="tag" class="col-md-3 control-label">加盟条件</label>
             <div class="col-md-6">
-                <textarea  class="form-control" rows="7" style="width:100%;height:250px;" name="conditions" id="conditions">{{$conditions}}</textarea>
+                <textarea  class="form-control" rows="7" style="width:100%;height:250px;" name="conditions" id="conditions">{{htmlspecialchars_decode($conditions)}}</textarea>
             </div>
         </div>
         <div class="form-group">
             <label for="tag" class="col-md-3 control-label">项目简介</label>
             <div class="col-md-6">
-                <textarea  class="form-control" rows="7" style="width:100%;height:250px;" name="xmdesc" id="xmdesc">{{$xmdesc}}</textarea>
+                <textarea  class="form-control" rows="7" style="width:100%;height:250px;" name="xmdesc" id="xmdesc">{{htmlspecialchars_decode($xmdesc)}}</textarea>
             </div>
         </div>
         <div class="form-group">
             <label for="tag" class="col-md-3 control-label">加盟优势</label>
             <div class="col-md-6">
-                <textarea  class="form-control" rows="7" style="width:100%;height:250px;" name="advantage" id="advantage">{{$advantage}}</textarea>
+                <textarea  class="form-control" rows="7" style="width:100%;height:250px;" name="advantage" id="advantage">{{htmlspecialchars_decode($advantage)}}</textarea>
             </div>
         </div>
         <div class="form-group">
             <label for="tag" class="col-md-3 control-label">支持政策</label>
             <div class="col-md-6">
-                <textarea  class="form-control" rows="7" style="width:100%;height:250px;" name="policies" id="policies">{{$policies}}</textarea>
+                <textarea  class="form-control" rows="7" style="width:100%;height:250px;" name="policies" id="policies">{{htmlspecialchars_decode($policies)}}</textarea>
             </div>
         </div>
         <div class="form-group">
             <label for="tag" class="col-md-3 control-label">盈利分析</label>
             <div class="col-md-6">
-                <textarea  class="form-control" rows="7" style="width:100%;height:250px;" name="analysis" id="analysis">{{$analysis}}</textarea>
+                <textarea  class="form-control" rows="7" style="width:100%;height:250px;" name="analysis" id="analysis">{{htmlspecialchars_decode($analysis)}}</textarea>
             </div>
         </div>
         <div class="form-group">
             <label for="tag" class="col-md-3 control-label"></label>
             <div class="col-md-5">
-                <button type="button" class="btn  @if($status==0) btn-primary @else btn-default @endif status" value="0">禁用</button>
+                <button type="button" class="btn @if($status==0) btn-primary @else btn-default @endif status" value="0">禁用</button>
                 <button type="button" class="btn @if($status==1) btn-primary @else btn-default @endif status" value="1">启用</button>
                 <input type="hidden" value="{{$status}}" id="status" name="status" />
             </div>

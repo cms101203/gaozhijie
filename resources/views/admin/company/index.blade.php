@@ -168,7 +168,7 @@
                 columnDefs: [
                     {
                         'targets': -1, "render": function (data, type, row) {
-                            var caozuo = '<a href="/admin/xm/create" class="btn btn-xs btn-success" title="添加项目"><i class="fa fa-plus-circle"></i></a>';
+                            var caozuo = '<a href="/admin/xm/create/'+row['id']+'" class="btn btn-xs btn-success" title="添加项目"><i class="fa fa-plus-circle"></i></a>';
                             caozuo += '&nbsp;&nbsp;<a class="btn btn-xs btn-warning" href="/admin/company/' + row['id'] + '/edit" class="X-Small btn-xs text-success " title=" 编辑"><i class="fa fa-edit"></i></a>';
                             caozuo += '&nbsp;&nbsp;<a class="btn btn-xs btn-danger delBtn X-Small" href="#" attr="' + row['id'] + '"  title=" 删除"><i class="fa fa-trash-o"></i></a>';
                             

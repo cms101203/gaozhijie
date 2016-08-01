@@ -297,5 +297,23 @@ class CompanyController extends Controller {
 
         return redirect()->back()->withSuccess("操作成功");
     }
+    
+    public function ajax(Request $request){
+        $key = $request->get('query');
+        $data = array();
+        $data['query'] = $key;
+        $data['keyword'] = $key;
+        $data['count'] = 10;
+        if(trim($key)){
+            $list = CompanyModel::where('name','like','%'.trim($key)."%")->get()->toArray();
+            if($list){
+                foreach ($list as $k=>$v){
+                    $data['data'][$k]['id'] = $v['id'];
+                    $data['suggestions'][] = $v['name'];
+                }
+            }
+        }
+        return json_encode($data);
+    }
 
 }

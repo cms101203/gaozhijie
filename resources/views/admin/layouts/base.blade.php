@@ -14,6 +14,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="_token" content="{{ csrf_token() }}"/>
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bootstrap/css/jquery.autocomplete.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -269,6 +270,14 @@ $(document).ready(function() {
    }, function(start, end, label) {
 //     console.log(start.toISOString(), end.toISOString(), label);
    });
+   $('.wzbirthday').daterangepicker({
+       startDate:"2016-01-01",
+       singleDatePicker: false,
+       dateFormat: 'yy-mm-dd',
+       showDropdowns: true
+   }, function(start, end, label) {
+//     console.log(start.toISOString(), end.toISOString(), label);
+   });
 });
 //操作复选框所属平台
 $('.pt_ck').click(function(){
@@ -324,6 +333,23 @@ $('#zsarea_ck').click(function(){
     $('#zsarea_xz').html(str);
     $("#dialog_selectProvince").modal('hide');
 });
+
+//操作文章所属平台
+$('.pt_art_ck').click(function(){
+    var id = $(this).val();
+    var token = $("input[name='_token']").val();
+    $.post('/admin/category/cateson',{id:id,_token:token},function(res){
+        $("#Columns").html(res.str);
+    },'json');
+}); 
+//操作文章所属平台
+$('#Sel_pt').change(function(){
+    var id = $(this).val();
+    var token = $("input[name='_token']").val();
+    $.post('/admin/category/cateson',{id:id,_token:token},function(res){
+        $("#Columns").html(res.str);
+    },'json');
+});
 </script>
 
 <script>
@@ -331,6 +357,74 @@ $('#zsarea_ck').click(function(){
    $(function () {
       $('#myTab li:eq(0) a').tab('show');
    });
+   
+</script>
+<script src="/bootstrap/js/jquery.autocomplete.js"></script>
+<script>
+function searcharea(){
+   var a = $('#search_cm').autocomplete({
+       serviceUrl:'/admin/company/ajax',
+       minChars:1,
+       delimiter: /(,|;)\s*/, // regex or character
+       maxHeight:400,
+       width:300,
+       zIndex: 9999,
+       deferRequestBy: 2, //miliseconds
+       //params: {country:'Yes'}, //aditional parameters
+       noCache: false, //default is false, set to true to disable caching
+       // callback function:
+       onSelect: function(value, data){
+            $("#search_cm").val(data.id);
+          }
+       });
+ }
+
+ $(function(){
+    searcharea();
+
+    $("#ipts").change(function(){
+       $("#search_cm").val('');
+    });
+
+ });
+ 
+ //品牌ID
+function searchxm(){
+   
+   var a = $('#search_xm').autocomplete({
+       serviceUrl:'/admin/xm/ajax',
+       minChars:1,
+       delimiter: /(,|;)\s*/, // regex or character
+       maxHeight:400,
+       width:300,
+       zIndex: 9999,
+       deferRequestBy: 2, //miliseconds
+       //params: {country:'Yes'}, //aditional parameters
+       noCache: false, //default is false, set to true to disable caching
+       // callback function:
+       onSelect: function(value, data){
+            $("#search_xm").val(data.id);
+            var pt = $("input[name='pt']:checked").val();
+            var sear=new RegExp(pt);
+            if(sear.test(data.pt))
+            {
+                $("#xiderr").text('*');
+            }else{
+                $("#xiderr").text('此项目没有在选择的平台内');
+            }
+
+          }
+       });
+ }
+
+ $(function(){
+    searchxm();
+
+    $("#search_xm").change(function(){
+       $(this).val('');
+    });
+
+ });
 </script>
 
 

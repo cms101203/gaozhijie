@@ -94,6 +94,10 @@ Breadcrumbs::register("admin.user.manage", function ($breadcrumbs){
                         $breadcrumbs->parent("admin.xm.manage");
                         $breadcrumbs->push("项目列表", route("admin.xm.index"));
                     });
+                    Breadcrumbs::register("admin.joinstore.index", function ($breadcrumbs) {
+                        $breadcrumbs->parent("admin.xm.manage");
+                        $breadcrumbs->push("加盟店管理", route("admin.joinstore.index"));
+                    });
                     Breadcrumbs::register("admin.xm.create", function ($breadcrumbs) {
                   $breadcrumbs->parent("admin.xm.index");
                           $breadcrumbs->push("添加项目", route("admin.xm.create"));
@@ -105,5 +109,41 @@ Breadcrumbs::register("admin.user.manage", function ($breadcrumbs){
                   Breadcrumbs::register("admin.pape.create", function ($breadcrumbs) {
                   $breadcrumbs->parent("admin.xm.manage");
                             $breadcrumbs->push("项目图片管理", route("admin.pape.create"));
+                        });
+                  Breadcrumbs::register("admin.joinstore.create", function ($breadcrumbs) {
+                  $breadcrumbs->parent("admin.joinstore.index");
+                          $breadcrumbs->push("加盟店添加", route("admin.joinstore.create"));
+                        });
+                  Breadcrumbs::register("admin.joinstore.edit", function ($breadcrumbs) {
+                  $breadcrumbs->parent("admin.joinstore.index");
+                          $breadcrumbs->push("加盟店编辑", route("admin.joinstore.edit"));
+                        });
+                  Breadcrumbs::register("admin.article.manage", function ($breadcrumbs){
+        $breadcrumbs->push("文章管理", route("admin.article.manage"));
+    });Breadcrumbs::register("admin.article.index", function ($breadcrumbs) {
+                        $breadcrumbs->parent("admin.article.manage");
+                        $breadcrumbs->push("文章列表", route("admin.article.index"));
+                    });
+                    Breadcrumbs::register("admin.article.create", function ($breadcrumbs) {
+                  $breadcrumbs->parent("admin.article.index");
+                          $breadcrumbs->push("添加文章", route("admin.article.create"));
+                        });
+                  Breadcrumbs::register("admin.article.edit", function ($breadcrumbs) {
+                  $breadcrumbs->parent("admin.article.index");
+                          $breadcrumbs->push("编辑文章", route("admin.article.edit"));
+                        });
+                  Breadcrumbs::register("admin.question.manage", function ($breadcrumbs){
+        $breadcrumbs->push("问答管理", route("admin.question.manage"));
+    });Breadcrumbs::register("admin.question.index", function ($breadcrumbs) {
+                        $breadcrumbs->parent("admin.question.manage");
+                        $breadcrumbs->push("问答列表", route("admin.question.index"));
+                    });
+                    Breadcrumbs::register("admin.question.create", function ($breadcrumbs) {
+                  $breadcrumbs->parent("admin.question.index");
+                          $breadcrumbs->push("添加问答", route("admin.question.create"));
+                        });
+                  Breadcrumbs::register("admin.question.edit", function ($breadcrumbs) {
+                  $breadcrumbs->parent("admin.question.index");
+                          $breadcrumbs->push("编辑问答", route("admin.question.edit"));
                         });
                   

@@ -176,7 +176,7 @@ class XmController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create($id=0) {
         $data = [];
         foreach ($this->fields as $field => $default) {
             $data[$field] = old($field, $default);
@@ -198,6 +198,7 @@ class XmController extends Controller
         //适合人群
         $data['srAll'] = CateModel::where('pid', '=', 17)->get()->toArray();
         $data['logo'] = array();
+        $data['cid'] = $id;
         return view('admin.xm.create', $data);
     }
 
@@ -368,6 +369,25 @@ class XmController extends Controller
         }
 
         return redirect()->back()->withSuccess("操作成功");
+    }
+    
+    public function ajax(Request $request){
+        $key = $request->get('query');
+        $data = array();
+        $data['query'] = $key;
+        $data['keyword'] = $key;
+        $data['count'] = 10;
+        if(trim($key)){
+            $list = XmModel::where('name','like','%'.trim($key)."%")->get()->toArray();
+            if($list){
+                foreach ($list as $k=>$v){
+                    $data['data'][$k]['id'] = $v['id'];
+                    $data['data'][$k]['pt'] = $v['pt'];
+                    $data['suggestions'][] = $v['name'];
+                }
+            }
+        }
+        return json_encode($data);
     }
 
 }

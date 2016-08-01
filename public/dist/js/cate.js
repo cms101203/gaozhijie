@@ -16,10 +16,10 @@ $(function(){
          }
     });
      $('.status').click(function(){
-         var str = $(this).attr("class").split(" ")[1];
+         var str = $(this).attr("class").split("  ")[1];
          if(str=='btn-default'){
-             $('.status').attr("class",'btn btn-default status');
-             $(this).attr("class",'btn btn-primary status');
+             $('.status').attr("class",'btn  btn-default  status');
+             $(this).attr("class",'btn  btn-primary  status');
              $("#status").val($(this).val());
          }
     });

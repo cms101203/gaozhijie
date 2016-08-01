@@ -79,8 +79,8 @@
 <div class="form-group">
     <label for="tag" class="col-md-3 control-label"></label>
     <div class="col-md-5">
-        <button type="button" class="btn btn-default status" value="0">禁用</button>
-        <button type="button" class="btn btn-primary status" value="1">启用</button>
+        <button type="button" class="btn @if($status==0) btn-primary @else btn-default @endif status" value="0">禁用</button>
+        <button type="button" class="btn @if($status==1) btn-primary @else btn-default @endif status" value="1">启用</button>
         <input type="hidden" value="{{$status}}" id="status" name="status" />
     </div>
 </div>

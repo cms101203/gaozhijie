@@ -124,14 +124,14 @@
 <div class="form-group">
     <label for="tag" class="col-md-3 control-label">公司简介</label>
     <div class="col-md-6">
-        <textarea  class="form-control" rows="7" style="width:100%;height:300px;" name="content" id="myEditor">{{$content}}</textarea>
+        <textarea  class="form-control" rows="7" style="width:100%;height:300px;" name="content" id="myEditor">{{htmlspecialchars_decode($content)}}</textarea>
     </div>
 </div>
 
 <div class="form-group">
     <label for="tag" class="col-md-3 control-label"></label>
     <div class="col-md-5">
-        <button type="button" class="btn  @if($status==0) btn-primary @else btn-default @endif status" value="0">禁用</button>
+        <button type="button" class="btn @if($status==0) btn-primary @else btn-default @endif status" value="0">禁用</button>
         <button type="button" class="btn @if($status==1) btn-primary @else btn-default @endif status" value="1">启用</button>
         <input type="hidden" value="{{$status}}" id="status" name="status" />
     </div>

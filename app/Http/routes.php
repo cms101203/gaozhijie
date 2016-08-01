@@ -59,14 +59,18 @@ $router->group(['namespace' => 'Admin', 'middleware' => ['auth','authAdmin','men
     Route::post('admin/category/store', ['as' => 'admin.category.create', 'uses' => 'CategoryController@store']); //添加
     Route::post('admin/category/cateson', ['as' => 'admin.category.cateson', 'uses' => 'CategoryController@cateson']); //添加
     //公司管理路由
+    Route::get('admin/company/ajax', ['as' => 'admin.company.ajax', 'uses' => 'CompanyController@ajax']);  //用户管理
     Route::get('admin/company/manage', ['as' => 'admin.company.manage', 'uses' => 'CompanyController@index']);  //用户管理
     Route::post('admin/company/index', ['as' => 'admin.company.index', 'uses' => 'CompanyController@index']);
     Route::resource('admin/company', 'CompanyController');
     Route::put('admin/company/update', ['as' => 'admin.company.edit', 'uses' => 'CompanyController@update']); //修改
+    //Route::post('admin/upload_img','UploadController@imgUpload');
     Route::post('admin/company/store', ['as' => 'admin.company.create', 'uses' => 'CompanyController@store']); //添加
     Route::post('admin/company/region', ['as' => 'admin.company.region', 'uses' => 'CompanyController@region']); //添加
     Route::post('admin/company/show', ['as' => 'admin.company.show', 'uses' => 'CompanyController@show']); //添加
+    
     Route::post('admin/upload_img','UploadController@imgUpload');
+    
     
     //公司证件图片
     Route::get('admin/pape/{id}-{block}/create', ['as' => 'admin.pape.create', 'uses' => 'PapeController@create']);
@@ -74,11 +78,32 @@ $router->group(['namespace' => 'Admin', 'middleware' => ['auth','authAdmin','men
     Route::put('admin/pape/update', ['as' => 'admin.pape.edit', 'uses' => 'PapeController@update']); //修改
     Route::post('admin/pape/store', ['as' => 'admin.pape.create', 'uses' => 'PapeController@store']); //添加
     //项目管理路由
+    Route::get('admin/xm/ajax', ['as' => 'admin.xm.ajax', 'uses' => 'XmController@ajax']);  //用户管理
     Route::get('admin/xm/manage', ['as' => 'admin.xm.manage', 'uses' => 'XmController@index']);  //用户管理
     Route::post('admin/xm/index', ['as' => 'admin.xm.index', 'uses' => 'XmController@index']);
     Route::resource('admin/xm', 'XmController');
     Route::put('admin/xm/update', ['as' => 'admin.xm.edit', 'uses' => 'XmController@update']); //修改
     Route::post('admin/xm/store', ['as' => 'admin.xm.create', 'uses' => 'XmController@store']); //添加
+    Route::get('admin/xm/create/{id?}', ['as' => 'admin.xm.create', 'uses' => 'XmController@create']); //添加
+    //
+    Route::get('admin/joinstore/{cid}/create', ['as' => 'admin.joinstore.create', 'uses' => 'JoinstoreController@create']);
+    Route::get('admin/joinstore/{cid?}', ['as' => 'admin.joinstore.index', 'uses' => 'JoinstoreController@index']);
+    Route::post('admin/joinstore/index', ['as' => 'admin.joinstore.index', 'uses' => 'JoinstoreController@index']); //查询
+    Route::put('admin/joinstore/update', ['as' => 'admin.joinstore.edit', 'uses' => 'JoinstoreController@update']); //修改
+    Route::post('admin/joinstore/store', ['as' => 'admin.joinstore.create', 'uses' => 'JoinstoreController@store']); //添加
+    //文章管理路由
+    Route::get('admin/article/manage', ['as' => 'admin.article.manage', 'uses' => 'ArticleController@index']);  //用户管理
+    Route::post('admin/article/index', ['as' => 'admin.article.index', 'uses' => 'ArticleController@index']);
+    Route::resource('admin/article', 'ArticleController');
+    Route::put('admin/article/update', ['as' => 'admin.article.edit', 'uses' => 'ArticleController@update']); //修改
+    Route::post('admin/article/store', ['as' => 'admin.article.create', 'uses' => 'ArticleController@store']); //添加
+    
+    //问答管理路由
+    Route::get('admin/question/manage', ['as' => 'admin.question.manage', 'uses' => 'QuestionController@index']);  //用户管理
+    Route::post('admin/question/index', ['as' => 'admin.question.index', 'uses' => 'QuestionController@index']);
+    Route::resource('admin/question', 'QuestionController');
+    Route::put('admin/question/update', ['as' => 'admin.question.edit', 'uses' => 'QuestionController@update']); //修改
+    Route::post('admin/question/store', ['as' => 'admin.question.create', 'uses' => 'QuestionController@store']); //添加
 
 
 });
