@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>用户登录 | NeoCMS</title>
+  <title>用户登录 | QudaoCMS</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -27,11 +27,11 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a><b>Neo</b>CMS</a>
+    <a><b>Qudao</b>CMS</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">万事登录难</p>
+    <p class="login-box-msg">渠道登录</p>
 
     <form action="{{ url('/admin/login') }}" method="post">
 		{!! csrf_field() !!}
@@ -60,9 +60,6 @@
     </form>
 
     <!-- /.social-auth-links -->
-
-    <a href="#">我忘了密码</a><br>
-    <a href="#" class="text-center">新注册用户</a>
 
   </div>
   <!-- /.login-box-body -->

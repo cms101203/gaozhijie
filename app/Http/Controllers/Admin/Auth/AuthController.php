@@ -31,7 +31,7 @@ class AuthController extends Controller
     protected $redirectAfterLogout = '/admin/login';
     protected $redirectTo = '/admin';
     protected $loginView = 'admin.auth.login';
-    protected $registerView = 'admin.auth.register';
+    protected $registerView = 'admin.auth.login';//'admin.auth.register';
     protected $guard = 'admin';
 
 

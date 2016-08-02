@@ -238,7 +238,7 @@
                     },
                     {
                         'targets':4, "render": function (data, type, row) {
-                            var bdstatus = '<a href="">编辑</a>';
+                            var bdstatus = '<a href="/admin/joinstore/'+row['id']+'">编辑</a>';
                             return bdstatus;
                         }
                     }

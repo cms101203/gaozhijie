@@ -85,12 +85,20 @@ $router->group(['namespace' => 'Admin', 'middleware' => ['auth','authAdmin','men
     Route::put('admin/xm/update', ['as' => 'admin.xm.edit', 'uses' => 'XmController@update']); //修改
     Route::post('admin/xm/store', ['as' => 'admin.xm.create', 'uses' => 'XmController@store']); //添加
     Route::get('admin/xm/create/{id?}', ['as' => 'admin.xm.create', 'uses' => 'XmController@create']); //添加
-    //
+    //店面管理路由
     Route::get('admin/joinstore/{cid}/create', ['as' => 'admin.joinstore.create', 'uses' => 'JoinstoreController@create']);
     Route::get('admin/joinstore/{cid?}', ['as' => 'admin.joinstore.index', 'uses' => 'JoinstoreController@index']);
+    Route::resource('admin/joinstore', 'JoinstoreController');
     Route::post('admin/joinstore/index', ['as' => 'admin.joinstore.index', 'uses' => 'JoinstoreController@index']); //查询
     Route::put('admin/joinstore/update', ['as' => 'admin.joinstore.edit', 'uses' => 'JoinstoreController@update']); //修改
     Route::post('admin/joinstore/store', ['as' => 'admin.joinstore.create', 'uses' => 'JoinstoreController@store']); //添加
+   //店面优惠信息路由
+    Route::get('admin/discount/{cid}/create', ['as' => 'admin.discount.create', 'uses' => 'DiscountController@create']);
+    Route::get('admin/discount/{sid?}', ['as' => 'admin.discount.index', 'uses' => 'DiscountController@index']);
+    Route::resource('admin/discount', 'DiscountController');
+    Route::post('admin/discount/index', ['as' => 'admin.discount.index', 'uses' => 'DiscountController@index']); //查询
+    Route::put('admin/discount/update', ['as' => 'admin.discount.edit', 'uses' => 'DiscountController@update']); //修改
+    Route::post('admin/discount/store', ['as' => 'admin.discount.create', 'uses' => 'DiscountController@store']); //添加
     //文章管理路由
     Route::get('admin/article/manage', ['as' => 'admin.article.manage', 'uses' => 'ArticleController@index']);  //用户管理
     Route::post('admin/article/index', ['as' => 'admin.article.index', 'uses' => 'ArticleController@index']);
@@ -112,7 +120,7 @@ Route::get('admin', function () {
     return redirect('/admin/index');
 });
 
-Route::auth();
+//Route::auth();
 
 
 

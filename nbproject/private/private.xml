@@ -3,20 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/u/website/xiangmu/myapps/app/Http/Controllers/Admin/CompanyController.php</file>
-            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/xm/xmtu.blade.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/question/index.blade.php</file>
             <file>file:/home/u/website/xiangmu/myapps/app/Http/routes.php</file>
-            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/layouts/base.blade.php</file>
-            <file>file:/home/u/website/xiangmu/myapps/public/bootstrap/css/jquery.autocomplete.css</file>
-            <file>file:/home/u/website/xiangmu/myapps/public/bootstrap/js/upload.js</file>
-            <file>file:/home/u/website/xiangmu/myapps/public/bootstrap/css/bootstrap.min.css.map</file>
-            <file>file:/home/u/website/xiangmu/myapps/app/Http/Controllers/Admin/IndexController.php</file>
-            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/xm/create.blade.php</file>
-            <file>file:/home/u/website/xiangmu/myapps/app/Http/Controllers/Admin/PermissionController.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/xm/xmtu.blade.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/question/create.blade.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Models/Question.php</file>
             <file>file:/home/u/website/xiangmu/myapps/app/Http/Controllers/Admin/XmController.php</file>
-            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/company/index.blade.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Http/Controllers/Admin/QuestionController.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/article/index.blade.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/company/pape.blade.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Http/Controllers/Admin/ArticleController.php</file>
             <file>file:/home/u/website/xiangmu/myapps/app/Http/Controllers/Admin/PapeController.php</file>
-            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/xm/_form.blade.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/question/edit.blade.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/app/Models/Questions.php</file>
+            <file>file:/home/u/website/xiangmu/myapps/resources/views/admin/question/_form.blade.php</file>
         </group>
     </open-files>
 </project-private>

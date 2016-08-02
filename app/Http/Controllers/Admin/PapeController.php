@@ -37,7 +37,7 @@ class PapeController extends Controller
      public function create($id,$block){
          if($block==2){
              $result = XmModel::find((int)$id);
-             $title = "找不到该项目";
+             $title = "找不到该图片";
              $url = "/admin/xm";
          }
         if (!$result)

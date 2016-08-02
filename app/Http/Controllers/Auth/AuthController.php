@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
 
     /**
@@ -37,7 +37,7 @@ class AuthController extends Controller
      * @return void
      */
     public function __construct()
-    {
+    {   
         $this->middleware('guest', ['except' => 'logout']);
     }
 

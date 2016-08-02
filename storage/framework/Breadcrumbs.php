@@ -98,6 +98,10 @@ Breadcrumbs::register("admin.user.manage", function ($breadcrumbs){
                         $breadcrumbs->parent("admin.xm.manage");
                         $breadcrumbs->push("加盟店管理", route("admin.joinstore.index"));
                     });
+                    Breadcrumbs::register("admin.discount.index", function ($breadcrumbs) {
+                        $breadcrumbs->parent("admin.xm.manage");
+                        $breadcrumbs->push("店铺优惠列表", route("admin.discount.index"));
+                    });
                     Breadcrumbs::register("admin.xm.create", function ($breadcrumbs) {
                   $breadcrumbs->parent("admin.xm.index");
                           $breadcrumbs->push("添加项目", route("admin.xm.create"));
@@ -117,6 +121,14 @@ Breadcrumbs::register("admin.user.manage", function ($breadcrumbs){
                   Breadcrumbs::register("admin.joinstore.edit", function ($breadcrumbs) {
                   $breadcrumbs->parent("admin.joinstore.index");
                           $breadcrumbs->push("加盟店编辑", route("admin.joinstore.edit"));
+                        });
+                  Breadcrumbs::register("admin.discount.create", function ($breadcrumbs) {
+                  $breadcrumbs->parent("admin.discount.index");
+                          $breadcrumbs->push("优惠信息添加", route("admin.discount.create"));
+                        });
+                  Breadcrumbs::register("admin.discount.edit", function ($breadcrumbs) {
+                  $breadcrumbs->parent("admin.discount.index");
+                          $breadcrumbs->push("优惠信息编辑", route("admin.discount.edit"));
                         });
                   Breadcrumbs::register("admin.article.manage", function ($breadcrumbs){
         $breadcrumbs->push("文章管理", route("admin.article.manage"));
